@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<h2>Tính chỉ số BMI</h2>
+<label> Nhập trọng lượng: </label>
+<input type="number" id="weight" placeholder="kg"><br><br>
+<label>Nhập chiều cao: </label>
+<input type="number" id="height" placeholder="m"><br><br>
+<button type="button" onclick="calculatingBMI()">Tính chỉ số BMI</button>
+
+<h3 id="display"></h3>
+
+<script>
+    function calculatingBMI() {
+        let numberWeight = +document.getElementById('weight').value;
+        console.log('can nang', numberWeight);
+        let numberHeight = +document.getElementById('height').value;
+        console.log('chieu cao', numberHeight);
+        let bmi = numberWeight/Math.pow(numberHeight,2);
+        console.log('bmi', bmi)
+
+        if (bmi < 18){
+            document.getElementById('display').innerHTML = 'Underweight';
+        }else if (bmi < 25.0){
+            document.getElementById('display').innerHTML = 'Normal';
+        }else if (bmi < 30.0){
+            document.getElementById('display').innerHTML = 'Overweight';
+        }else {
+            document.getElementById('display').innerHTML = 'Obese'
+        }
+    }
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
